@@ -37,7 +37,9 @@ export class BrowseDataPage {
   }
 
   updateEntries(){
-    let queryTextLower = this.queryText.toLowerCase();
-    this.entries = _.filter(this.data, x => x.title.toLowerCase().includes(queryTextLower));
-  }
+    if (this.queryText.length >= 2) {
+      let queryTextLower = this.queryText.toLowerCase();
+      this.entries = _.filter(this.data, x => x.title.toLowerCase().includes(queryTextLower));
+    }
+  } 
 }
