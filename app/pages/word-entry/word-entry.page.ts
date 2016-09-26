@@ -25,7 +25,7 @@ export class WordEntryPage {
   goHome(){
     let confirm = this.alertController.create({
       title: 'Are you sure?',
-      message: 'Are you sure you want to quit game and go Home?',
+      message: 'Are you sure you want to quit game, lose all progress and go Home?',
       buttons: [
         {
           text: 'Yes',
