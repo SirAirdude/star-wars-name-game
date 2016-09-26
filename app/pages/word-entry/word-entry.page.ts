@@ -62,21 +62,30 @@ export class WordEntryPage {
 
     let result = this.gameService.checkWord(this.wordInput);
     if (result){
-      let alert = this.alertController.create({
-        title: 'Correct',
-        subTitle: `"${this.wordInput}" was found for "${result.title}"!"`,
-        buttons: [
-          {
-            text: 'OK',
-            handler: () => {
-              this.turnData = this.gameService.nextTurn(this.wordInput, result);
-              console.log('**just assgined turnData', this.turnData);
-              this.wordInput = '';
-            }
-          }
-        ]
+      // let alert = this.alertController.create({
+      //   title: 'Correct',
+      //   subTitle: `"${this.wordInput}" was found for "${result.title}"!"`,
+      //   buttons: [
+      //     {
+      //       text: 'OK',
+      //       handler: () => {
+      //         this.turnData = this.gameService.nextTurn(this.wordInput, result);
+      //         console.log('**just assgined turnData', this.turnData);
+      //         this.wordInput = '';
+      //       }
+      //     }
+      //   ]
+      // });
+      // alert.present();
+      let toast = this.toastController.create({
+        message: `Correct! "${this.wordInput}" was found for "${result.title}"!"`,
+        duration: 2000,
+        showCloseButton: true
       });
-      alert.present();
+      toast.present();
+      this.turnData = this.gameService.nextTurn(this.wordInput, result);
+      console.log('**just assgined turnData', this.turnData);
+      this.wordInput = '';
     } else {
       let alert = this.alertController.create({
         title: 'Not Found',
