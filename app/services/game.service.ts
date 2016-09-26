@@ -50,7 +50,7 @@ export class GameService {
         if (!wordInput){
             return {
                 title: 'Missing Entry',
-                subTitle: 'You did not specifiy a word!',
+                subTitle: 'You did not enter a word!',
                 valid: false
             };
         }
