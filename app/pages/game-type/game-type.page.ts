@@ -19,7 +19,6 @@ export class GameTypePage {
     this.nav.push(PlayerEntryPage); 
   }
 
-
 }
 
 

@@ -5,23 +5,26 @@
 
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
     <ion-list>
 
-  <ion-item>
-    <ion-label floating>Enter Player 1</ion-label>
-    <ion-input type="text"></ion-input>
+  <ion-item *ngFor="let player of players">
+    <ion-label floating>Enter Player</ion-label>
+    <ion-input type="text" [(ngModel)]="player.name"></ion-input> 
+    <button item-right outline danger (click)="removePlayer(player)">
+        <ion-icon name="close"></ion-icon>
+    </button>
   </ion-item>
 
-  <ion-item>
+  <!--<ion-item>
     <ion-label floating>Enter Player 2</ion-label>
     <ion-input type="text"></ion-input>
-  </ion-item>
+  </ion-item>-->
 
 </ion-list>
 
-
+<button full (click)='addPlayer()'>Add Player</button>
 
 
 
@@ -29,6 +32,6 @@
 
 <ion-footer>
     <ion-toolbar>
-        <button full (click)="submitWord()">Start Game</button>
+        <button full (click)="startMultiPlayerPassAndPlayGame()">Start Game</button>
     </ion-toolbar>
 </ion-footer>
