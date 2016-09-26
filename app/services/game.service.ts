@@ -72,7 +72,7 @@ export class GameService {
         // Check if term has already been used 
         let wordHistory = this.getWordHistory();
         let lowerInput = wordInput.toLowerCase();
-        let previouslyUsed = _.find(wordHistory, x => x.inputTerm.toLowerCase() === lowerInput);
+        let previouslyUsed = _.find(wordHistory, x => x.entry.title.toLowerCase() ===lowerInput); 
         //console.log('**previously used', previouslyUsed);
         if (previouslyUsed) {
             return {
