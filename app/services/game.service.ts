@@ -12,7 +12,7 @@ export class GameService {
     constructor() { }
 
     startGame() {
-
+        this.players = []
     }
 
     getFullDataBank() {
@@ -23,7 +23,7 @@ export class GameService {
         return {
             wordCount: this.gameEntries.length,
             lastEntry: _.last(this.gameEntries),
-            currentPlayer: this.players[this.playerIndex].name
+            currentPlayer: (this.players.length === 0 ? '' : this.players[this.playerIndex].name)
         };
     }
 

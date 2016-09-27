@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar primary>
-        <ion-title>{{turnData.currentPlayer}}: Enter Word</ion-title>
+        <ion-title>{{turnData.currentPlayer}}<span *ngIf="turnData.currentPlayer">:</span> Enter Word</ion-title>
         <ion-buttons end>
             <button (click)="goHome()">
                 Resign
