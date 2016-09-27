@@ -12,3 +12,11 @@
     color: black;
 }
 
+.correct-toast > div {
+    background: green;
+}
+
+.correct-toast > div > div > button > span {
+    color: white;
+}
+

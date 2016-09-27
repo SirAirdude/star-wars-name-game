@@ -81,6 +81,7 @@ export class WordEntryPage {
       let toast = this.toastController.create({
         message: `Correct! "${this.wordInput}" was found for "${result.title}"!"`,
         duration: 2000,
+        cssClass: 'correct-toast',
         showCloseButton: true
       });
       toast.present();
