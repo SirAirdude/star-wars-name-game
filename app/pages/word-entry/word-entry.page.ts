@@ -54,7 +54,7 @@ export class WordEntryPage {
       let toast = this.toastController.create({
         message: `${validationResult.title} - ${validationResult.subTitle}`,
         duration: 2000,
-        cssClass: 'blank-toast',
+        cssClass: 'invalid-toast',
         showCloseButton: true
       });
       toast.present();
@@ -89,12 +89,13 @@ export class WordEntryPage {
       console.log('**just assgined turnData', this.turnData);
       this.wordInput = '';
     } else {
-      let alert = this.alertController.create({
-        title: 'Not Found',
-        subTitle: `"${this.wordInput}" was not found!"`,
-        buttons: ['OK']
+      let toast = this.toastController.create({
+        message: `" Invalid Term "${this.wordInput}" was not found!"`, 
+        duration: 2000,
+        cssClass: 'invalid-toast',
+        showCloseButton: true
       });
-      alert.present();
+      toast.present(); 
     }
   }
 

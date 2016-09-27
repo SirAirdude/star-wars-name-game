@@ -4,11 +4,11 @@
 }
 */
  
-.blank-toast > div {
+.invalid-toast > div {
     background: red; 
 }
 
-.blank-toast > div > div > button > span {
+.invalid-toast > div > div > button > span {
     color: black;
 }
 
@@ -19,4 +19,6 @@
 .correct-toast > div > div > button > span {
     color: white;
 }
+
+
 
