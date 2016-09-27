@@ -54,6 +54,7 @@ export class WordEntryPage {
       let toast = this.toastController.create({
         message: `${validationResult.title} - ${validationResult.subTitle}`,
         duration: 2000,
+        cssClass: 'blank-toast',
         showCloseButton: true
       });
       toast.present();
