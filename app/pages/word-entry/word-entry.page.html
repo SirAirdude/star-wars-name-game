@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar primary>
-        <ion-title>Enter Word</ion-title>
+        <ion-title>{{turnData.currentPlayer}}: Enter Word</ion-title>
         <ion-buttons end>
             <button (click)="goHome()">
                 Resign
@@ -19,7 +19,7 @@
         </ion-item>
         <ion-item>
             Last Word:
-            <item-note item-right *ngIf="turnData.lastEntry">{{turnData.lastEntry.inputTerm}}</item-note>
+            <item-note item-right *ngIf="turnData.lastEntry">{{turnData.lastEntry.inputTerm}}</item-note> 
         </ion-item>
         
         

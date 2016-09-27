@@ -20,6 +20,7 @@ export class WordEntryPage {
     private toastController: ToastController,
     private gameService: GameService) {
     this.turnData = this.gameService.getTurnData();
+    console.log(this.turnData); 
   }
 
   goHome(){
