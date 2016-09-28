@@ -5,7 +5,8 @@ let data = <DataItem[]>require('../data/star-wars-data');
 
 @Injectable()
 export class GameService {
-    private gameEntries: { inputTerm: string, entry: DataItem }[] = [];
+    //private gameEntries: { inputTerm: string, entry: DataItem }[] = [];
+    private gameEntries: GameEntry[] = [];
     private players: { name: string }[] = [];
     private playerIndex = 0;
 
@@ -88,8 +89,8 @@ export class GameService {
         return { valid: true };
     }
 
-    nextTurn(successfulTerm: string, entry: DataItem) {
-        this.gameEntries.push({ inputTerm: successfulTerm, entry: entry });
+    nextTurn(successfulTerm: string, entry: DataItem, player?: string) {
+        this.gameEntries.push({ inputTerm: successfulTerm, entry: entry, player: player });
         console.log('**game words', this.gameEntries);
         this.playerIndex += 1;
         if (this.playerIndex === this.players.length) {
@@ -111,6 +112,12 @@ export class GameService {
 interface DataItem {
     title: string,
     desc: string
+}
+
+interface GameEntry {
+    inputTerm: string,
+    entry: DataItem,
+    player: string
 }
 
 interface ValidationInfo {
