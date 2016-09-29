@@ -10,6 +10,7 @@ export class WordHistoryPage {
   constructor(
     private navParams: NavParams, 
     private viewController: ViewController) {
+      console.log(this.navParams.data)
       this.wordHistory = this.navParams.data;
   }
 

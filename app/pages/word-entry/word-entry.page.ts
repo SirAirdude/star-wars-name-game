@@ -30,8 +30,8 @@ export class WordEntryPage {
         {
           text: 'Yes',
           handler: () => confirm.dismiss().then(() => {
-            this.gameService.resetGame();
-            this.nav.popToRoot();
+           // this.gameService.resetGame();
+            this.nav.popToRoot(); 
           })
         },
         {
@@ -85,7 +85,7 @@ export class WordEntryPage {
         showCloseButton: true
       });
       toast.present();
-      this.turnData = this.gameService.nextTurn(this.wordInput, result);
+      this.turnData = this.gameService.nextTurn(this.wordInput, result, this.turnData.currentPlayer);
       console.log('**just assgined turnData', this.turnData);
       this.wordInput = '';
     } else {

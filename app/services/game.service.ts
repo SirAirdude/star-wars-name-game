@@ -12,9 +12,6 @@ export class GameService {
 
     constructor() { }
 
-    startGame() {
-        this.players = []
-    }
 
     getFullDataBank() {
         return data;
@@ -90,6 +87,7 @@ export class GameService {
     }
 
     nextTurn(successfulTerm: string, entry: DataItem, player?: string) {
+        console.log('player',player )
         this.gameEntries.push({ inputTerm: successfulTerm, entry: entry, player: player });
         console.log('**game words', this.gameEntries);
         this.playerIndex += 1;
@@ -101,6 +99,7 @@ export class GameService {
 
     resetGame() {
         this.gameEntries = [];
+        this.players  = [];
     }
 
     setPlayersList(players) {
