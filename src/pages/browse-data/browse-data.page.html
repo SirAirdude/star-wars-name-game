@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Star Wars Data Bank</ion-title>
+    </ion-navbar>
+
+    <ion-toolbar>
+        <ion-searchbar placeholder="Search"
+                       [(ngModel)]="queryText"
+                       (ionInput)="updateEntries()">
+        </ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list [virtualScroll]="entries" [approxItemHeight]="'132px'" [headerFn]="getHeader">
+        
+        <ion-item-divider color="secondary" *virtualHeader="let header">
+            {{header}}
+        </ion-item-divider>
+
+        <button ion-item *virtualItem="let entry" (click)="viewDetail(entry)">
+            {{entry.title}}
+        </button>
+    </ion-list>
+</ion-content>

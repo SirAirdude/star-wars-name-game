@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{turnData.currentPlayer}}<span *ngIf="turnData.currentPlayer">:</span> Enter Word</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-right (click)="goHome()">
+                Resign
+                <ion-icon name="flag"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-item>
+            Word Count: 
+            <ion-badge item-right>{{turnData.wordCount}}</ion-badge>
+        </ion-item>
+        <ion-item>
+            Last Word:
+            <!--<ion-note *ngIf="turnData.lastEntry">{{turnData.lastEntry.inputTerm}}</ion-note> -->
+            <ion-badge item-right *ngIf="turnData.lastEntry">{{turnData.lastEntry.inputTerm}}</ion-badge>
+        </ion-item>
+        
+        
+        <ion-card-content>
+            <ion-card-title *ngIf="turnData.lastEntry">
+                {{turnData.lastEntry.entry.title}}
+            </ion-card-title>
+            
+            <p *ngIf="turnData.lastEntry">{{turnData.lastEntry.entry.desc}}</p>
+
+        </ion-card-content>
+        
+        <ion-item>
+            <ion-label floating>Enter Word Here</ion-label>
+            <ion-input type="text" [(ngModel)]="wordInput"></ion-input>
+        </ion-item>
+    </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-row>
+        <ion-col width-50>
+            <button ion-button full (click)="checkWordHistory()">Check Word History</button>
+        </ion-col>
+        <ion-col width-50>
+            <button ion-button full (click)="submitWord()">Submit Word</button>
+        </ion-col>
+      </ion-row>
+  </ion-toolbar>
+</ion-footer>

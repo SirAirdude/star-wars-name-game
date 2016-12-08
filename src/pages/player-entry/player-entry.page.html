@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Enter Players</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item *ngFor="let player of players">
+            <ion-label floating>Enter Player</ion-label>
+            <ion-input type="text" [(ngModel)]="player.name"></ion-input>
+            <button ion-button item-right outline danger (click)="removePlayer(player)">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-item>
+    </ion-list>
+
+    <button ion-button full (click)='addPlayer()'>Add Player</button>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <button ion-button full (click)="startMultiPlayerPassAndPlayGame()">Start Game</button>
+    </ion-toolbar>
+</ion-footer>
