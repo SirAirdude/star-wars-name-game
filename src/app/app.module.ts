@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { BrowseDataPage, EntryDetailPage, GameTypePage, HomePage, PlayerEntryPage, WordEntryPage, WordHistoryPage } from '../pages/pages';
+import { BrowseDataPage, EntryDetailPage, HomePage, PlayerEntryPage, WordEntryPage, WordHistoryPage } from '../pages/pages';
 import { GameService } from '../services/services';
 
 @NgModule({
@@ -9,7 +9,6 @@ import { GameService } from '../services/services';
     MyApp,
     BrowseDataPage,
     EntryDetailPage,
-    GameTypePage,
     HomePage,
     PlayerEntryPage,
     WordEntryPage,
@@ -23,7 +22,6 @@ import { GameService } from '../services/services';
     MyApp,
     BrowseDataPage,
     EntryDetailPage,
-    GameTypePage,
     HomePage,
     PlayerEntryPage,
     WordEntryPage,
